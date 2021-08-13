@@ -1,0 +1,21 @@
+{
+    "nextId": 9,
+    "tipai": [
+        {
+            "id": 1,
+            "pavadinimas": "Maisto prekės111"
+        },
+        {
+            "id": 2,
+            "pavadinimas": "Kuras"
+        },
+        {
+            "id": 7,
+            "pavadinimas": "Kuras"
+        },
+        {
+            "id": 8,
+            "pavadinimas": "dar vienas1111"
+        }
+    ]
+}
