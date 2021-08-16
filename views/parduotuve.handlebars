@@ -1,0 +1,9 @@
+<h1>Parduotuvė</h1>
+<form action="/parduotuves/save" method="post">
+{{#if parduotuve}}
+    <input type="hidden" name="id" value="{{parduotuve.id}}">
+{{/if}}
+    <input type="text" name="pavadinimas" {{#if parduotuve}}value="{{parduotuve.pavadinimas}}"{{/if}}>
+    <input type="submit" value="Save">
+</form>
+<a href="/parduotuves">Cancel</a>

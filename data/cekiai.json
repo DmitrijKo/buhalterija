@@ -1,0 +1,26 @@
+{
+  "nextId": 1,
+  "nextIdPreke": 1,
+  "cekiai": [
+    {
+      "id": 1,
+      "data": "2021-08-13",
+      "parduotuveId": 2,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 1,
+          "pavadinimas": "Pienas",
+          "kaina": 2.31,
+          "tipasId": 2
+        },
+        {
+          "id": 2,
+          "pavadinimas": "Duona",
+          "kaina": 0.93,
+          "tipasId": 1
+        }
+      ]
+    }
+  ]
+}

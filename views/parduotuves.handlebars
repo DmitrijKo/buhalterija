@@ -1,0 +1,7 @@
+<a href="/parduotuves/edit">Pridėti naują</a>
+<ul>
+    {{#each sarasas}}
+    <li><a href="/parduotuves/edit/{{id}}">{{pavadinimas}}</a> <a href="/parduotuves/delete/{{id}}">X</a></li>
+    {{/each}}
+</ul>
+<a href="/">Back</a>

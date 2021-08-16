@@ -1,21 +1,17 @@
 {
-    "nextId": 9,
-    "tipai": [
-        {
-            "id": 1,
-            "pavadinimas": "Maisto prekės111"
-        },
-        {
-            "id": 2,
-            "pavadinimas": "Kuras"
-        },
-        {
-            "id": 7,
-            "pavadinimas": "Kuras"
-        },
-        {
-            "id": 8,
-            "pavadinimas": "dar vienas1111"
-        }
-    ]
+  "nextId": 12,
+  "tipai": [
+    {
+      "id": 1,
+      "pavadinimas": "Maisto prekės"
+    },
+    {
+      "id": 2,
+      "pavadinimas": "Gerimai"
+    },
+    {
+      "id": 11,
+      "pavadinimas": "dar vienas"
+    }
+  ]
 }

@@ -1,0 +1,13 @@
+{
+  "nextId": 4,
+  "tipai": [
+    {
+      "id": 2,
+      "pavadinimas": "Pavedimu"
+    },
+    {
+      "id": 3,
+      "pavadinimas": "Kortele"
+    }
+  ]
+}

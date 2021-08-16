@@ -1,0 +1,21 @@
+{
+  "nextId": 6,
+  "sarasas": [
+    {
+      "id": 2,
+      "pavadinimas": "Maxima"
+    },
+    {
+      "id": 3,
+      "pavadinimas": "Rimi"
+    },
+    {
+      "id": 4,
+      "pavadinimas": "Iki"
+    },
+    {
+      "id": 5,
+      "pavadinimas": "Norfa"
+    }
+  ]
+}
