@@ -1,4 +1,5 @@
 import express from "express";
+import Handlebars from "handlebars";
 import exphbs from "express-handlebars";
 
 import { router as islaiduTipaiRouter } from "./islaiduTipai.js";
@@ -8,6 +9,10 @@ import { router as cekiaiRouter } from "./cekiai.js";
 
 const PORT = 3000;
 const WEB = "web";
+
+Handlebars.registerHelper("eq", function(p1, p2) {
+  return p1 === p2;
+});
 
 const app = express();
 app.engine(

@@ -1,6 +1,6 @@
 {
-  "nextId": 1,
-  "nextIdPreke": 1,
+  "nextId": 8,
+  "nextIdPreke": 22,
   "cekiai": [
     {
       "id": 1,
@@ -18,6 +18,86 @@
           "id": 2,
           "pavadinimas": "Duona",
           "kaina": 0.93,
+          "tipasId": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "data": "2021-08-17",
+      "parduotuveId": 5,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 10,
+          "pavadinimas": "Limonadas",
+          "kaina": "1.2",
+          "tipasId": 2
+        },
+        {
+          "id": 11,
+          "pavadinimas": "Degtine",
+          "kaina": "12",
+          "tipasId": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "data": "2021-08-15",
+      "parduotuveId": 4,
+      "mokejimuTipasId": 4,
+      "prekes": [
+        {
+          "id": 16,
+          "pavadinimas": "Alus",
+          "kaina": 6.45,
+          "tipasId": 2
+        },
+        {
+          "id": 17,
+          "pavadinimas": "Vitinta šoninė",
+          "kaina": 4.99,
+          "tipasId": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "data": "2021-08-17",
+      "parduotuveId": 6,
+      "mokejimuTipasId": 2,
+      "prekes": [
+        {
+          "id": 18,
+          "pavadinimas": "Dujos",
+          "kaina": 7,
+          "tipasId": 14
+        },
+        {
+          "id": 19,
+          "pavadinimas": "Elektra",
+          "kaina": 27.5,
+          "tipasId": 14
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "data": "2021-08-17",
+      "parduotuveId": 7,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 20,
+          "pavadinimas": "Kuras",
+          "kaina": 80,
+          "tipasId": 13
+        },
+        {
+          "id": 21,
+          "pavadinimas": "Sumuštinis",
+          "kaina": 4.5,
           "tipasId": 1
         }
       ]

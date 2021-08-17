@@ -3,237 +3,168 @@ import express from "express";
 
 export const router = express.Router();
 
-class Cekis {
-
-    #parduotuves;
-    #mokejimuTipai;
-    #islaiduTipai;
-    #id;
-    #data;
-    #parduotuveId;
-    #mokejimuTipasId;
-    #prekes;
-
-    constructor(parduotuves, mokejimuTipai, islaiduTipai, cekis) {
-        if (!Array.isArray(parduotuves)) {
-            throw new TypeError("parduotuves must be an array");
-        }
-        this.#parduotuves = parduotuves;
-        if (!Array.isArray(mokejimuTipai)) {
-            throw new TypeError("mokejimuTipai must be an array");
-        }
-        this.#mokejimuTipai = mokejimuTipai;
-        if (!Array.isArray(islaiduTipai)) {
-            throw new TypeError("islaiduTipai must be an array");
-        }
-        this.#islaiduTipai = islaiduTipai;
-        if (typeof cekis !== "object") {
-            throw new TypeError("cekis must be an object");
-        }
-        this.id = cekis.id;
-        this.data = cekis.data;
-        this.parduotuveId = cekis.parduotuveId;
-        this.mokejimuTipasId = cekis.mokejimuTipasId;
-        if (Array.isArray(cekis.prekes)) {
-            this.prekes = cekis.prekes;
-        } else {
-            this.#prekes = [];
-        }
-    }
-
-    get id() {
-        return this.#id;
-    }
-    set id(value) {
-        if (typeof value !== "number" && typeof value !== "undefined") {
-            throw new TypeError("id must be a number");
-        }
-        if (value && !isFinite(value)) {
-            throw new TypeError("id must be a finite number");
-        }
-        this.#id = value;
-    }
-
-    get data() {
-        return this.#data;
-    }
-    set data(value) {
-        if (typeof value === "string") {
-            value = new Date(value);
-        }
-        if (!(value instanceof Date) || isNaN(value.getTime())) {
-            throw new TypeError("data must be a valid date");
-        }
-        this.#data = value;
-    }
-
-    get parduotuveId() {
-        return this.#parduotuveId;
-    }
-    set parduotuveId(value) {
-        const parduotuve = this.#parduotuves.find(p => p.id === value);
-        if (!parduotuve) {
-            throw new TypeError("parduotuveId must point to valid object");
-        }
-        this.#parduotuveId = value;
-    }
-
-    get parduotuve() {
-        const parduotuve = this.#parduotuves.find(p => p.id === this.#parduotuveId);
-        return parduotuve.pavadinimas;
-    }
-
-    get mokejimuTipasId() {
-        return this.#mokejimuTipasId;
-    }
-    set mokejimuTipasId(value) {
-        const mokejimuTipas = this.#mokejimuTipai.find(mt => mt.id === value);
-        if (!mokejimuTipas) {
-            throw new TypeError("mokejimuTipasId must point to valid object");
-        }
-        this.#mokejimuTipasId = value;
-    }
-
-    get mokejimuTipas() {
-        const mokejimuTipas = this.#mokejimuTipai.find(mt => mt.id === this.#mokejimuTipasId);
-        return mokejimuTipas.pavadinimas;
-    }
-
-    get prekes() {
-        return this.#prekes;
-    }
-    set prekes(value) {
-        if (!Array.isArray(value)) {
-            throw new TypeError("prekes must be an array");
-        }
-        const list = [];
-        for (const preke of value) {
-            const p = new Preke(this.#islaiduTipai, preke);
-            list.push(p);
-        }
-        this.#prekes = list;
-    }
-
-    toJSON() {
-        let data = this.#data.toISOString();
-        data = data.substring(0, 10);
-        return {
-            id: this.#id,
-            data,
-            parduotuveId: this.#parduotuveId,
-            mokejimuTipasId: this.#mokejimuTipasId,
-            prekes: this.#prekes
-        };
-    }
-}
-
-class Preke {
-    #islaiduTipai;
-    #id;
-    #pavadinimas;
-    #kaina;
-    #tipasId;
-
-    constructor(islaiduTipai, preke) {
-        if (!Array.isArray(islaiduTipai)) {
-            throw new TypeError("islaiduTipai must be an array");
-        }
-        this.#islaiduTipai = islaiduTipai;
-        if (typeof preke !== "object") {
-            throw new TypeError("preke must be an object");
-        }
-        this.id = preke.id;
-        this.pavadinimas = preke.pavadinimas;
-        this.kaina = preke.kaina;
-        this.tipasId = preke.tipasId;
-    }
-
-    get id() {
-        return this.#id;
-    }
-    set id(value) {
-        if (typeof value !== "number" && typeof value !== "undefined") {
-            throw new TypeError("id must be a number");
-        }
-        if (value && !isFinite(value)) {
-            throw new TypeError("id must be a finite number");
-        }
-        this.#id = value;
-    }
-
-    get pavadinimas() {
-        return this.#pavadinimas;
-    }
-    set pavadinimas(value) {
-        if (typeof value !== "string" || value.trim() === "") {
-            throw new TypeError("pavadinimas must be non-empty string");
-        }
-        this.#pavadinimas = value;
-    }
-
-    get kaina() {
-        return this.#kaina;
-    }
-    set kaina(value) {
-        if (typeof value !== "number" && typeof value !== "undefined") {
-            throw new TypeError("kaina must be a number");
-        }
-        if (value && !isFinite(value)) {
-            throw new TypeError("kaina must be a finite number");
-        }
-        this.#kaina = value;
-    }
-
-    get tipasId() {
-        return this.#tipasId;
-    }
-    set tipasId(value) {
-        const islaiduTipas = this.#islaiduTipai.find(it => it.id === value);
-        if (!islaiduTipas) {
-            throw new TypeError("tipasId must point to valid object");
-        }
-        this.#tipasId = value;
-    }
-
-    get tipas() {
-        const islaiduTipas = this.#islaiduTipai.find(it => it.id === this.#tipasId);
-        return islaiduTipas.pavadinimas;
-    }
-
-    toJSON() {
-        return {
-            id: this.#id,
-            pavadinimas: this.#pavadinimas,
-            kaina: this.#kaina,
-            tipasId: this.#tipasId
-        };
-    }
-}
-
 router.get("/", async (req, res) => {
-    try {
-        const islaiduTipai = JSON.parse(await readFile("data/islaiduTipai.json", {
-            encoding: "utf-8"
-        }));
-        const mokejimuTipai = JSON.parse(await readFile("data/mokejimuTipai.json", {
-            encoding: "utf-8"
-        }));
-        const parduotuves = JSON.parse(await readFile("data/parduotuves.json", {
-            encoding: "utf-8"
-        }));
-        const cekiai = JSON.parse(await readFile("data/cekiai.json", {
-            encoding: "utf-8"
-        }));
-        const list = [];
-        for (const cekis of cekiai.cekiai) {
-            list.push(new Cekis(parduotuves.sarasas, mokejimuTipai.tipai, islaiduTipai.tipai, cekis));
+  try {
+    const islaiduTipai = JSON.parse(
+      await readFile("data/islaiduTipai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const mokejimuTipai = JSON.parse(
+      await readFile("data/mokejimuTipai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const parduotuves = JSON.parse(
+      await readFile("data/parduotuves.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const cekiai = JSON.parse(
+      await readFile("data/cekiai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    for (const cekis of cekiai.cekiai) {
+      const parduotuve = parduotuves.sarasas.find((p) =>
+        p.id === cekis.parduotuveId
+      );
+      if (parduotuve) {
+        cekis.parduotuve = parduotuve.pavadinimas;
+      }
+      const mokejimuTipas = mokejimuTipai.tipai.find((mt) =>
+        mt.id === cekis.mokejimuTipasId
+      );
+      if (mokejimuTipas) {
+        cekis.mokejimuTipas = mokejimuTipas.pavadinimas;
+      }
+      for (const preke of cekis.prekes) {
+        const islaiduTipas = islaiduTipai.tipai.find((it) =>
+          it.id === preke.tipasId
+        );
+        if (islaiduTipas) {
+          preke.tipas = islaiduTipas.pavadinimas;
         }
-        res.render("cekiai", {
-            title: "Čekiai",
-            list
-        });
+      }
     }
-    catch (err) {
-        res.status(500).end(`Įvyko klaida: ${err.message}`);
+    res.render("cekiai", {
+      title: "Čekiai",
+      list: cekiai.cekiai,
+    });
+  } catch (err) {
+    res.status(500).end(`Įvyko klaida: ${err.message}`);
+  }
+});
+
+router.get("/edit/:id?", async (req, res) => {
+  try {
+    const islaiduTipai = JSON.parse(
+      await readFile("data/islaiduTipai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const mokejimuTipai = JSON.parse(
+      await readFile("data/mokejimuTipai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const parduotuves = JSON.parse(
+      await readFile("data/parduotuves.json", {
+        encoding: "utf-8",
+      }),
+    );
+    if (req.params.id) {
+      const cekiai = JSON.parse(
+        await readFile("data/cekiai.json", {
+          encoding: "utf-8",
+        }),
+      );
+      const id = parseInt(req.params.id);
+      const cekis = cekiai.cekiai.find((tipas) => tipas.id === id);
+      res.render("cekis", {
+        title: "Redaguojam čekį",
+        islaiduTipai: islaiduTipai.tipai,
+        mokejimuTipai: mokejimuTipai.tipai,
+        parduotuves: parduotuves.sarasas,
+        cekis,
+      });
+    } else {
+      res.render("cekis", {
+        title: "Kuriam čekį",
+        islaiduTipai: islaiduTipai.tipai,
+        mokejimuTipai: mokejimuTipai.tipai,
+        parduotuves: parduotuves.sarasas,
+      });
     }
+  } catch (err) {
+    res.status(500).end(`Įvyko klaida: ${err.message}`);
+  }
+});
+
+router.post("/save", async (req, res) => {
+  try {
+    const cekiai = JSON.parse(
+      await readFile("data/cekiai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    let cekis;
+    if (req.body.id) {
+      const id = parseInt(req.body.id);
+
+      cekis = cekiai.cekiai.find((cekis) => cekis.id === id);
+      if (!cekis) {
+        res.redirect("/cekiai");
+        return;
+      }
+      cekis.data = req.body.data;
+      cekis.pavadinimas = req.body.pavadinimas;
+      cekis.parduotuveId = parseInt(req.body.parduotuveId);
+      cekis.mokejimuTipasId = parseInt(req.body.mokejimuTipasId);
+    } else {
+      cekis = {
+        id: cekiai.nextId++,
+        data: req.body.data,
+        pavadinimas: req.body.pavadinimas,
+        parduotuveId: parseInt(req.body.parduotuveId),
+        mokejimuTipasId: parseInt(req.body.mokejimuTipasId),
+      };
+      cekiai.cekiai.push(cekis);
+    }
+    const prekes = JSON.parse(req.body.prekes);
+    for (const preke of prekes) {
+      preke.kaina = parseFloat(preke.kaina);
+      if (preke.id < 0) {
+        preke.id = cekiai.nextIdPreke++;
+      }
+    }
+    cekis.prekes = prekes;
+    await writeFile("data/cekiai.json", JSON.stringify(cekiai, null, 2), {
+      encoding: "utf-8",
+    });
+    res.redirect("/cekiai");
+  } catch (err) {
+    res.status(500).end(`Įvyko klaida: ${err.message}`);
+  }
+});
+
+router.get("/delete/:id", async (req, res) => {
+  try {
+    const cekiai = JSON.parse(
+      await readFile("data/cekiai.json", {
+        encoding: "utf-8",
+      }),
+    );
+    const id = parseInt(req.params.id);
+    const index = cekiai.cekiai.findIndex((tipas) => tipas.id === id);
+    if (index >= 0) {
+      cekiai.cekiai.splice(index, 1);
+      await writeFile("data/cekiai.json", JSON.stringify(cekiai, null, 2), {
+        encoding: "utf-8",
+      });
+    }
+    res.redirect("/cekiai");
+  } catch (err) {
+    res.status(500).end(`Įvyko klaida: ${err.message}`);
+  }
 });

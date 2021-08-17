@@ -1,0 +1,66 @@
+1. pagal islaidu tipa (datos intervalas) (rusiavimas)
+2. pagal pardaveja (datos intervalas) (rusiavimas)
+3. visos islaidos (datos intervalas)
+4. pagal apmokejimo tipa (datos intervalas) (rusiavimas)
+
+islaidu tipai
+[
+	{
+		"id": 1,
+		"pavadinimas: "Maistas"
+	},
+	{
+		"id": 2,
+		"pavadinimas: "Gerimai"
+	}
+]
+
+pardavejai
+[
+	{
+		"id": 1,
+		"pavadinimas: "Maxima"
+	},
+	{
+		"id": 2,
+		"pavadinimas: "Rimi"
+	}
+]
+
+apmokejimo tipai
+[
+	{
+		"id": 1,
+		"pavadinimas: "grynais"
+	},
+	{
+		"id": 2,
+		"pavadinimas: "kortele 1"
+	}
+]
+
+cekiai
+[
+	{
+		"id": 1,
+		"data": "2021-08-13",
+		"pardavejasId": 2
+		"mokejimoTipasId": 1,
+		"prekes": [
+			{
+				"id": 1,
+				"pavadinimas": "Pienas",
+				"kaina": 2.31,
+				"tipasId": 2
+			},
+			{
+				"id": 2,
+				"pavadinimas": "Duona",
+				"kaina": 0.93,
+				"tipasId": 1
+			}
+		]
+	}
+]
+
+

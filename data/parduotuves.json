@@ -1,5 +1,5 @@
 {
-  "nextId": 6,
+  "nextId": 8,
   "sarasas": [
     {
       "id": 2,
@@ -16,6 +16,14 @@
     {
       "id": 5,
       "pavadinimas": "Norfa"
+    },
+    {
+      "id": 6,
+      "pavadinimas": "Komunalinės paslaugos"
+    },
+    {
+      "id": 7,
+      "pavadinimas": "Degalinė"
     }
   ]
 }
