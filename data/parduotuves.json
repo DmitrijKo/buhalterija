@@ -1,6 +1,10 @@
 {
-  "nextId": 8,
+  "nextId": 9,
   "sarasas": [
+    {
+      "id": 1,
+      "pavadinimas": "Komunalinės paslaugos"
+    },
     {
       "id": 2,
       "pavadinimas": "Maxima"
@@ -19,11 +23,15 @@
     },
     {
       "id": 6,
-      "pavadinimas": "Komunalinės paslaugos"
+      "pavadinimas": "Degalinė"
     },
     {
       "id": 7,
-      "pavadinimas": "Degalinė"
+      "pavadinimas": "Pramogos"
+    },
+    {
+      "id": 8,
+      "pavadinimas": "Kavinė"
     }
   ]
 }

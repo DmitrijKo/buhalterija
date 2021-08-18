@@ -1,20 +1,16 @@
 {
-  "nextId": 6,
+  "nextId": 4,
   "tipai": [
     {
-      "id": 2,
-      "pavadinimas": "Pavedimu"
-    },
-    {
-      "id": 3,
-      "pavadinimas": "Kortele"
-    },
-    {
-      "id": 4,
+      "id": 1,
       "pavadinimas": "Grynais"
     },
     {
-      "id": 5,
+      "id": 2,
+      "pavadinimas": "Kortele"
+    },
+    {
+      "id": 3,
       "pavadinimas": "Pavedimu"
     }
   ]

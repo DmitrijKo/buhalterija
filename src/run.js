@@ -6,6 +6,7 @@ import { router as islaiduTipaiRouter } from "./islaiduTipai.js";
 import { router as parduotuvesRouter } from "./parduotuves.js";
 import { router as mokejimuTipaiRouter } from "./mokejimuTipai.js";
 import { router as cekiaiRouter } from "./cekiai.js";
+import { router as ataskaitosRouter } from "./ataskaitos.js";
 
 const PORT = 3000;
 const WEB = "web";
@@ -34,6 +35,7 @@ app.use("/islaiduTipai", islaiduTipaiRouter);
 app.use("/parduotuves", parduotuvesRouter);
 app.use("/mokejimuTipai", mokejimuTipaiRouter);
 app.use("/cekiai", cekiaiRouter);
+app.use("/ataskaitos", ataskaitosRouter);
 
 app.listen(PORT);
 console.log(`Server started on port ${PORT}`);
