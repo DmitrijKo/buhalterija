@@ -1,5 +1,5 @@
 {
-  "nextId": 7,
+  "nextId": 17,
   "tipai": [
     {
       "id": 1,
@@ -7,23 +7,19 @@
     },
     {
       "id": 2,
-      "pavadinimas": "Gėrimai"
+      "pavadinimas": "Gerimai"
     },
     {
-      "id": 3,
-      "pavadinimas": "Kuras"
+      "id": 11,
+      "pavadinimas": "dar vienas 111"
     },
     {
-      "id": 4,
-      "pavadinimas": "Pramogos"
+      "id": 13,
+      "pavadinimas": "naujas"
     },
     {
-      "id": 5,
-      "pavadinimas": "Komunalinės paslaugos"
-    },
-    {
-      "id": 6,
-      "pavadinimas": "Kavinė"
+      "id": 14,
+      "pavadinimas": "bam bam"
     }
   ]
 }

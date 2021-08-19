@@ -1,5 +1,80 @@
 {
-  "nextId": 1,
-  "nextIdPreke": 1,
-  "cekiai": []
+  "nextId": 6,
+  "nextIdPreke": 17,
+  "cekiai": [
+    {
+      "id": 1,
+      "data": "2021-08-13",
+      "parduotuveId": 2,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 1,
+          "pavadinimas": "Pienas",
+          "kaina": 2.31,
+          "tipasId": 2
+        },
+        {
+          "id": 2,
+          "pavadinimas": "Duona",
+          "kaina": 0.93,
+          "tipasId": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "data": "2021-08-01",
+      "parduotuveId": 3,
+      "mokejimuTipasId": 2,
+      "prekes": [
+        {
+          "id": 12,
+          "pavadinimas": "Nauja preke2",
+          "kaina": 333,
+          "tipasId": 2
+        },
+        {
+          "id": 15,
+          "pavadinimas": "Nauja preke",
+          "kaina": 123.45,
+          "tipasId": 11
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "data": "2021-08-17",
+      "parduotuveId": 5,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 10,
+          "pavadinimas": "Limonadas",
+          "kaina": 1.2,
+          "tipasId": 2
+        },
+        {
+          "id": 11,
+          "pavadinimas": "Degtine",
+          "kaina": 12,
+          "tipasId": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "data": "2021-08-18",
+      "parduotuveId": 5,
+      "mokejimuTipasId": 3,
+      "prekes": [
+        {
+          "id": 16,
+          "pavadinimas": "Pienas",
+          "kaina": 2,
+          "tipasId": 2
+        }
+      ]
+    }
+  ]
 }

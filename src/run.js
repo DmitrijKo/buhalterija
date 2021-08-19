@@ -7,6 +7,7 @@ import { router as parduotuvesRouter } from "./parduotuves.js";
 import { router as mokejimuTipaiRouter } from "./mokejimuTipai.js";
 import { router as cekiaiRouter } from "./cekiai.js";
 import { router as ataskaitosRouter } from "./ataskaitos.js";
+import { router as jsonRouter } from "./json/jsonRouter.js";
 
 const PORT = 3000;
 const WEB = "web";
@@ -27,6 +28,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 app.use(express.static(WEB));
+app.use(express.json());
 app.use(express.urlencoded({
   extended: true,
 }));
@@ -36,6 +38,7 @@ app.use("/parduotuves", parduotuvesRouter);
 app.use("/mokejimuTipai", mokejimuTipaiRouter);
 app.use("/cekiai", cekiaiRouter);
 app.use("/ataskaitos", ataskaitosRouter);
+app.use("/json", jsonRouter);
 
 app.listen(PORT);
 console.log(`Server started on port ${PORT}`);

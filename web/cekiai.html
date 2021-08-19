@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cekiai single page app</title>
+    <script src="/js/cekiai.js"></script>
+</head>
+
+<body>
+    <button onclick="getIslaiduTipai()">Get islaidu tipai</button>
+    <div id="islaiduTipai"></div>
+    <hr>
+    <input type="number" id="itId">
+    <input type="text" id="itPavadinimas">
+    <hr>
+    <button onclick="getIslaiduTipas()">Get islaidu tipas</button>
+    <hr>
+    <button onclick="addIslaiduTipas()">Add islaidu tipas</button>
+    <hr>
+    <button onclick="editIslaiduTipas()">Edit islaidu tipas</button>
+    <hr>
+    <button onclick="deleteIslaiduTipas()">Delete islaidu tipas</button>
+
+    <hr>
+    <hr>
+
+    <button onclick="getMokejimuTipai()">Get mokejimu tipai</button>
+    <div id="mokejimuTipai"></div>
+    <hr>
+    <input type="number" id="mtId">
+    <input type="text" id="mtPavadinimas">
+    <hr>
+    <button onclick="getMokejimuTipas()">Get mokejimu tipas</button>
+    <hr>
+    <button onclick="addMokejimuTipas()">Add mokejimu tipas</button>
+    <hr>
+    <button onclick="editMokejimuTipas()">Edit mokejimu tipas</button>
+    <hr>
+    <button onclick="deleteMokejimuTipas()">Delete mokejimu tipas</button>
+
+    <hr>
+    <hr>
+    <input type="number" id="cekisId">
+    <input type="number" id="prekeId">
+    <hr>
+    <button onclick="deletePreke()">Delete preke</button>
+
+</body>
+
+</html>

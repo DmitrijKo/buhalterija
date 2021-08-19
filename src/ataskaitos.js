@@ -6,11 +6,10 @@ export const router = express.Router();
 
 router.get("/pagalIslaiduTipa", (req, res) => {
   res.render("filtras", {
-    ataskaitosPavadinimas: "Ataskaita: pagal išlaidų tipą",
+    ataskaitosPavadinimas: "Ataskaita: išlaidos pagal tipą",
     ataskaitosGeneravimas: "/ataskaitos/pagalIslaiduTipa",
   });
 });
-
 router.post("/pagalIslaiduTipa", async (req, res) => {
   let nuo = moment(req.body.nuo, "YYYY-MM-DD", true);
   let iki = moment(req.body.iki, "YYYY-MM-DD", true);
@@ -73,11 +72,10 @@ router.post("/pagalIslaiduTipa", async (req, res) => {
 
 router.get("/pagalPardaveja", (req, res) => {
   res.render("filtras", {
-    ataskaitosPavadinimas: "Ataskaita: išlaidos pagal pardavėją",
+    ataskaitosPavadinimas: "Ataskaita: išlaidos pagal pardaveją",
     ataskaitosGeneravimas: "/ataskaitos/pagalPardaveja",
   });
 });
-
 router.post("/pagalPardaveja", async (req, res) => {
   let nuo = moment(req.body.nuo, "YYYY-MM-DD", true);
   let iki = moment(req.body.iki, "YYYY-MM-DD", true);
@@ -144,7 +142,6 @@ router.get("/pagalVisas", (req, res) => {
     ataskaitosGeneravimas: "/ataskaitos/pagalVisas",
   });
 });
-
 router.post("/pagalVisas", async (req, res) => {
   let nuo = moment(req.body.nuo, "YYYY-MM-DD", true);
   let iki = moment(req.body.iki, "YYYY-MM-DD", true);

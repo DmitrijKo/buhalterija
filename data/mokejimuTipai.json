@@ -1,17 +1,17 @@
 {
-  "nextId": 4,
+  "nextId": 6,
   "tipai": [
     {
-      "id": 1,
-      "pavadinimas": "Grynais"
-    },
-    {
       "id": 2,
-      "pavadinimas": "Kortele"
+      "pavadinimas": "Pavedimu"
     },
     {
       "id": 3,
-      "pavadinimas": "Pavedimu"
+      "pavadinimas": "Kortele"
+    },
+    {
+      "id": 4,
+      "pavadinimas": "grn"
     }
   ]
 }
